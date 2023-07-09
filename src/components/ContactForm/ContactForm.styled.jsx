@@ -19,7 +19,7 @@ export const Input = styled.input`
   height: 20px;
   margin-top: 2px;
   border: none;
-  border-radius: 10px;
+  border-radius: 20px;
 `;
 
 export const Button = styled.button`

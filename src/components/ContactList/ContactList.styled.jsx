@@ -6,3 +6,7 @@ export const List = styled.ul`
   padding: 0 15px;
   width: 360px;
 `;
+
+export const Text = styled.p`
+  padding: 0 15px;
+`;

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Form = styled.form`
-  max-width: 360px;
+  width: 360px;
   border-radius: 5px;
   padding: 10px;
   background-color: #68829e;
@@ -19,7 +19,7 @@ export const Input = styled.input`
   height: 20px;
   margin-top: 2px;
   border: none;
-  border-radius: 20px;
+  border-radius: 10px;
 `;
 
 export const Button = styled.button`

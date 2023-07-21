@@ -5,20 +5,18 @@ import { ContactItem } from 'components/ContactItem/ContactItem';
 import * as S from './ContactList.styled';
 
 export const ContactList = () => {
-  const contacts = useSelector(getContacts); // функція, яка дозволяє витягнути дані зі стейта
+  const contacts = useSelector(getContacts);
   const filter = useSelector(getFilter);
-  const dispatch = useDispatch(); // функція, яка дозволяє відправити екшн
-
-  // фільтруємо контакти по значенню фільтра
+  const dispatch = useDispatch();
+ 
   const filteredContacts = contacts?.filter(contact =>
     contact?.name?.toLowerCase().includes(filter.toLowerCase())
   );
 
   const onDeleteContact = id => {
-    dispatch(deleteContact(id)); // відправляємо екшн
+    dispatch(deleteContact(id));
   };
 
-  // якщо контактів немає, то виводимо повідомлення
   if (!filteredContacts?.length) {
     return <S.Text>No contacts found.</S.Text>;
   }

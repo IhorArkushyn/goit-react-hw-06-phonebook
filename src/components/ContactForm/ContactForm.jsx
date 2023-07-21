@@ -6,31 +6,31 @@ import { toast } from 'react-toastify';
 import * as S from './ContactForm.styled';
 
 export const ContactForm = () => {
-  const dispatch = useDispatch(); // функція, яка дозволяє відправити екшн
-  const contacts = useSelector(getContacts); // отримуємо всі контакти зі стейта
+  const dispatch = useDispatch();
+  const contacts = useSelector(getContacts);
 
   const handleSubmit = event => {
-    event.preventDefault(); // відміняємо стандартну поведінку браузера
+    event.preventDefault();
 
-    // створюємо об'єкт контакту
+  
     const contact = {
       id: nanoid(),
       name: event.currentTarget.elements.name.value,
       number: event.currentTarget.elements.number.value,
     };
 
-    // перевіряємо чи такий контакт вже є в списку
+   
     const isExist = contacts.find(
-      ({ name }) => name.toLowerCase() === contact.name.toLowerCase() // переводимо в нижній регістр і порівнюємо
+      ({ name }) => name.toLowerCase() === contact.name.toLowerCase()
     );
 
-    // якщо такий контакт вже є, то виводимо повідомлення
+    
     if (isExist) {
       return toast.warn(`${contact.name} is already in contacts.`);
     }
 
-    dispatch(addContact(contact)); // відправляємо екшн з контактом в стейт
-    event.currentTarget.reset(); // очищаємо форму
+    dispatch(addContact(contact));
+    event.currentTarget.reset();
   };
 
   return (
